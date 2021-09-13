@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# sukkiri-houkoku
+
+## Introduction
+
+> If you want to report a clearing on Twitter, you can use this web application to notify your followers with the exact time.
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
