@@ -2,8 +2,7 @@
 
 ## Introduction
 
-> If you want to report a clearing on Twitter, you can use this web application to notify your followers with the exact time.
-
+> If you want to report when you get out of the bathroom on Twitter, you can use this web application to notify your followers with the exact time.
 
 ## Getting Started with Create React App
 
