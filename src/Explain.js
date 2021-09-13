@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Explain";
 import Button from "@material-ui/core/Button";
 import TwitterIcon from "@material-ui/icons/Twitter";
@@ -14,6 +14,8 @@ const useStyles = makeStyles((theme) => ({
 export function Explain() {
   const [time, setTime] = useState("");
   const classes = useStyles();
+  const isFirstRender = useRef(false);
+
   const handleClick = () => {
     setTime(
       new Date().getHours() +
@@ -25,12 +27,19 @@ export function Explain() {
     );
   };
   useEffect(() => {
-    window.open(
-      "http://twitter.com/share?url=https://sukkiri.qqey.net/&text=" +
-        time +
-        "&hashtags=スッキリ報告"
-    );
-  });
+    isFirstRender.current = true;
+  }, []);
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+    } else {
+      window.open(
+        "http://twitter.com/share?url=https://sukkiri.qqey.net/&text=" +
+          time +
+          "&hashtags=スッキリ報告"
+      );
+    }
+  }, [time]);
 
   return (
     <div className="app">
