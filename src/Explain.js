@@ -36,9 +36,10 @@ export function Explain() {
             );
             window.open(
               "http://twitter.com/share?url=https://sukkiri.qqey.net/&text=" +
-                { time } +
+                time +
                 "&hashtags=スッキリ報告"
             );
+            console.log(time);
           }}
         >
           ツイート
