@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Explain";
 import Button from "@material-ui/core/Button";
 import TwitterIcon from "@material-ui/icons/Twitter";
@@ -14,6 +14,24 @@ const useStyles = makeStyles((theme) => ({
 export function Explain() {
   const [time, setTime] = useState("");
   const classes = useStyles();
+  const handleClick = () => {
+    setTime(
+      new Date().getHours() +
+        "時" +
+        new Date().getMinutes() +
+        "分" +
+        new Date().getSeconds() +
+        "秒にスッキリしました！"
+    );
+  };
+  useEffect(() => {
+    window.open(
+      "http://twitter.com/share?url=https://sukkiri.qqey.net/&text=" +
+        time +
+        "&hashtags=スッキリ報告"
+    );
+  });
+
   return (
     <div className="app">
       <center>
@@ -26,20 +44,7 @@ export function Explain() {
           className={classes.button}
           startIcon={<TwitterIcon />}
           onClick={() => {
-            setTime(
-              new Date().getHours() +
-                "時" +
-                new Date().getMinutes() +
-                "分" +
-                new Date().getSeconds() +
-                "秒にスッキリしました！"
-            );
-            window.open(
-              "http://twitter.com/share?url=https://sukkiri.qqey.net/&text=" +
-                time +
-                "&hashtags=スッキリ報告"
-            );
-            console.log(time);
+            handleClick();
           }}
         >
           ツイート
